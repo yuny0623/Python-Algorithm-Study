@@ -1,30 +1,29 @@
 '''
 1158 
+
+https://www.acmicpc.net/problem/1268
+
 '''
-
-import sys
-input = sys.stdin.readline 
-
 n = int(input())
+ban = [] 
+same = [0] * n
 
-student = [] 
+for i in range(n):
+    ban.append(list(map(int, input().split())))
+    same[i] = [0] * n
 
-for _ in range(n):
-    student.append(list(map(int, input().split())))
+for i in range(5):
+    for j in range(n):
+        for k in range(j + 1, n):
+            if ban[j][i] == ban[k][i]:
+                same[k][j] = 1
+                same[j][k] = 1
 
-candidate = [] # 임시 반장 후보군  
-s_class = [0  for _ in range(10)] # 학급 
-for i in range(5): # 5학년까지 돌게요 
-    li = [] 
-    for j in range(len(student)): 
-        s_class[student[i][j]] += 1
-    
-    m = max(s_class)
-    for k in range(len(student)):
-        if student[i][k] == m:
-            candidate.append(k)
+cnt = []
+for s in same:
+    cnt.append(s.count(1))
 
-print(max(candidate))       
+print(cnt.index(max(cnt)) + 1)
 
     
 
