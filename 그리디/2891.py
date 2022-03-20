@@ -1,30 +1,29 @@
 '''
 1257 
+~
+0154 
 '''
 
-import sys
-input = sys.stdin.readline 
+N, S, R = map(int, input().split())
+broken = list(map(int, input().split()))
+spare = list(map(int, input().split()))
 
-# 팀의 수 n
-# 카약이 손상된 팀의 수 s
-# 카약을 하나 더 가져온 팀의 수 r 
-n, s, r = map(int, input().split())
+answer = S
 
-broken = list(map(str, input().split()))
-surplus = list(map(str, input().split()))
-print("broken: ", broken)
-print("surplus: ", surplus)
-broken.sort() 
-for i in range(1, n + 1):
-    if i == broken[0]:
-        print("부서진팀번호:", broken[0])
-        if i - 1 > 1 and (i - 1 in surplus):
-            broken.pop(0)
-            pos = surplus.find(i -1)
-            surplus.pop(pos)
-        elif i + 1 <= (n + 1) and (i + 1 in surplus):
-            broken.pop(0)
-            pos = surplus.find(i + 1)
-            surplus.pop(pos)
+# ascending sort
+broken.sort()
+spare.sort()
 
-print(len(broken))
+# check if possible to start
+for i in range(S):
+	if not spare:
+		# no more extra kayaks
+		break
+	for j in range(R):
+		# find kayak..
+		if broken[i] == spare[j] or broken[i] == spare[j] + 1 or broken[i] == spare[j] - 1:
+			answer -= 1
+			spare[j] = -1 # used kayak
+			break
+			
+print(answer)
