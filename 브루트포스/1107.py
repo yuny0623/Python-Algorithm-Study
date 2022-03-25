@@ -13,6 +13,6 @@ if(n == 100):
     print("0")
     exit()
 else: 
-    
+    pass     
 
 
