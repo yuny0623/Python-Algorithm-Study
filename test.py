@@ -6,4 +6,24 @@
 #         l1.next = self.mergeTwoLists(l1.next, l2)
 #     return l1 
 
-print(max("ab", "a"))
+def isValid( s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        # 아마 스택 써야겠지? 
+        stack = []
+        front = ['(', '[', '{']
+        back = [')',']' , '}']
+        for i in range(len(s)):
+            if s[i] in front:
+                stack.append(s[i])
+                continue 
+            if s[i] in back: 
+                symbol = stack.pop()
+                if symbol != s[i]:
+                    return False
+
+        return True
+
+print(isValid("()"))
