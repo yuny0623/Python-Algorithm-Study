@@ -4,6 +4,6 @@
 1. 백준 boj 문제풀이집
 2. leetcode 문제풀이집 
 
-
+사용언어: Python3  
 
   
