@@ -1,5 +1,7 @@
 '''
 0937 ~ 0958 
+
+대문자도 포함된다는걸 명심. 
 '''
 class Solution:
     def reverseVowels(self, s: str) -> str:

@@ -2,7 +2,7 @@
 0845 ~ 0948 
 
 이전에 풀었던 문제랑 아주 유사함. 
-isporphic strings 문제랑 거의 똑같음. 
+isporphic strings 문제랑 거의 똑같음. -> 그냥 똑같음. 
 '''
 
 class Solution:

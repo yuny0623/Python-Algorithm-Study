@@ -1,5 +1,6 @@
 '''
 0133 ~ 0203 
+이분 탐색 떠올리면 다 푼거 
 '''
 # The isBadVersion API is already defined for you.
 # def isBadVersion(version: int) -> bool:
