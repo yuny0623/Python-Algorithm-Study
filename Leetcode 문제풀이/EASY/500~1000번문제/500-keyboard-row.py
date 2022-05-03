@@ -1,6 +1,7 @@
 '''
 0822 ~ 1037 
-예외 
+예외만 잘생각하고 풀면됨.
+생각보다 코드가 너무 길어졌네 
 '''
 class Solution:
     def findWords(self, words: List[str]) -> List[str]:
