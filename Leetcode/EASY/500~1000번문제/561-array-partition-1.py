@@ -11,7 +11,8 @@ Memory Usage: 17.3 MB, less than 18.22% of Python3 online submissions for Array 
 1 7 이랑 min 해주면 1 이 나오는데 그러면 7이 통째로 낭비되는거나 마찬가지임.
 그런데 7 8 min 해주면? 7을 쓸 수 있다. 여기서 8이 낭비되는거 아니냐 하지만 8은 7이랑 1차이밖에 안남
 그리고 가장 큰수라 어차피 min 해도 못씀. 
- 
+
+더 빠르게 만들 수 있을까 ? 
 '''
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
@@ -27,6 +28,26 @@ class Solution:
         
         for a, b in pairs:
             total += min(a, b)
+            
+        return total 
+
+'''
+개선한 솔루션: 
+Runtime: 313 ms, faster than 64.36% of Python3 online submissions for Array Partition I.
+Memory Usage: 16.9 MB, less than 18.22% of Python3 online submissions for Array Partition I.
+
+불필요하게 리스트에 담는 동작은 없앴음. 
+'''
+
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        li = sorted(nums)
+        total = 0 # 합 
+        i = 0
+        l = len(li)
+        while i < l:
+            total += min(li[i], li[i + 1] )
+            i += 2
             
         return total 
 
