@@ -7,7 +7,7 @@ Memory Usage: 16.5 MB, less than 6.31% of Python3 online submissions for Longest
 문제가 좋음. 
 어려워 보여서 살짝 당황할 수 있음.
 collections.Counter 를 떠올리면 절반 풀었음. 
-colelctions.Counter 를 value 오름차순기준으로 정렬하는 법을 알면 다푼거임. 
+colelctions.Counter 를 value기준 오름차순으로 정렬하는 법을 알면 나머지 절반 다푼거임. 
 '''
 import collections
 class Solution:
