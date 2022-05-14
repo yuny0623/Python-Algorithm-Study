@@ -56,7 +56,14 @@ class Solution:
     
         return -1 
     
-    
+'''
+개선 솔루션:
+total_sum - left_sum - nums[i] === left_sum
+위 방식대로 풀면 더 빠를듯? 
+'''
+
+
+
 
 
 
