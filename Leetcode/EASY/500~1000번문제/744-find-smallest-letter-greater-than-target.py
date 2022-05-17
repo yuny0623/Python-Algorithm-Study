@@ -4,7 +4,7 @@ Runtime: 119 ms, faster than 74.01% of Python3 online submissions for Find Small
 Memory Usage: 14.2 MB, less than 91.13% of Python3 online submissions for Find Smallest Letter Greater Than Target.
 
 코멘트:
-쉬운 문제 
+쉬운 문제임. 
 '''
 
 class Solution:
