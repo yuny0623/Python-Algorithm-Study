@@ -17,7 +17,6 @@ class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # 아 이거 런너같은데... 
         # 런너로 풀어야할 것 같은 느낌이 든다... 
-        middle = None
         fast = slow = head
         while fast and fast.next:
             fast = fast.next.next
