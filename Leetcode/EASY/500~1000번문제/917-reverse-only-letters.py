@@ -3,7 +3,7 @@
 Runtime: 24 ms, faster than 97.97% of Python3 online submissions for Reverse Only Letters.
 Memory Usage: 13.9 MB, less than 64.76% of Python3 online submissions for Reverse Only Letters.
 
-코멘트: 
+코멘트: 구현문제.
 '''
 class Solution:
     def reverseOnlyLetters(self, s: str) -> str:
