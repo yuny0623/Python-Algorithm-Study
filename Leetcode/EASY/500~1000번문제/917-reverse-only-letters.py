@@ -17,6 +17,7 @@ class Solution:
         
         alpha = alpha[::-1]
         result = [0 for _ in range(len(s))]
+        
         for p in pos:
             result[p] = s[p]
         print(result)
