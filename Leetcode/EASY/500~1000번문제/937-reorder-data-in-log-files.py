@@ -1,5 +1,5 @@
 '''
-0717 ~ <못풀었음> ~ <0616 한숨자고 다시풀게용.> ~ <모르겠음>
+0717 ~ <못풀었음> ~ <0616 한숨자고 다시풀게용.> ~ <모르겠음> ~ <답지 보고 풀음> ~ 1129 
 
 코멘트: 
 아 이거 생각보다 안풀린다. 30분째 고전중... 
@@ -94,3 +94,34 @@ class Solution:
         return fixed_letter_log + digit_log 
 
 
+'''
+정답 솔루션: 
+Runtime: 72 ms, faster than 13.21% of Python3 online submissions for Reorder Data in Log Files.
+Memory Usage: 14.1 MB, less than 7.18% of Python3 online submissions for Reorder Data in Log Files.
+
+코멘트: 
+sort 에서 key 로 lambda 를 사용할때 사용하는 기법을 쓰지 않고 위처럼 풀려고 하니 많은 라인이 낭비되고 
+어렵게 느껴졌다. lambda 에서 정렬 순서를 컨트롤할 수 있는 기법이 있는데 이걸 몰라서 헤맸다. 
+
+'''
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        digit_log = []
+        letter_log = [] 
+        
+        for l in logs:
+            li = l.split()
+            if li[1].isdigit():
+                digit_log.append(l)
+            else:
+                letter_log.append([l.split()[1:], l.split()[0], l])
+        
+        letter_log = sorted(letter_log, key = lambda x: (x[0], x[1]))
+        print(letter_log)
+        
+        new_letter_log = []
+        for letter in letter_log:
+            new_letter_log.append(letter[2])
+        
+        return new_letter_log + digit_log
+    
