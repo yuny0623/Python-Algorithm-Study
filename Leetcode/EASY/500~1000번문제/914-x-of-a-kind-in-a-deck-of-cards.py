@@ -1,5 +1,5 @@
 '''
-1119 ~ 
+1119 ~  1154 
 '''
 
 '''
@@ -79,6 +79,22 @@ class Solution:
         return True 
             
         
+'''
+정답 솔루션2: 
+Runtime: 203 ms, faster than 44.65% of Python3 online submissions for X of a Kind in a Deck of Cards.
+Memory Usage: 14.2 MB, less than 69.11% of Python3 online submissions for X of a Kind in a Deck of Cards.
+
+아무래도 위의 솔루션이 너무 길고 좋아보이지 않아서 다른 솔루션을 찾던 중 
+맘에 쏙드는 솔루션을 찾았다. gcd 를 만들어서 쓰겠거니 생각하곤 있었는데 reduce 를 쓸줄은
+몰랐다. 성능도 더 놓아졌다. 
+'''            
+class Solution:
+    def hasGroupsSizeX(self, deck: List[int]) -> bool:
+        def gcd(x, y):
+            while y: x, y = y, x%y 
+            return x 
+        count = collections.Counter(deck).values()
+        return reduce(gcd, count) > 1
                 
 
 
