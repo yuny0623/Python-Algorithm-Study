@@ -3,7 +3,7 @@
 
 코멘트: 
 흠... 
-투포인터...? 슬라이딩 윈도우...? 뭐로 풀까? 
+투포인터...? 슬라이딩 윈도우...? 뭐로 풀까? <- 둘다 아님. 
 '''
 
 '''
@@ -75,7 +75,7 @@ Runtime: 549 ms, faster than 23.14% of Python3 online submissions for Partition 
 Memory Usage: 21.1 MB, less than 37.19% of Python3 online submissions for Partition Array Into Three Parts With Equal Sum.
 
 코멘트: 
-지금 count == 2 로 체크하고 있는게 살짝 가독성에 좋아보이진 않음. 
+지금 count == 2 로 체크하고 있는게 살짝 가독성에 좋아보이진 않음. <- 이거 수정해보자. 
 '''     
         
 class Solution:
@@ -96,6 +96,32 @@ class Solution:
                 accum = 0
         return False 
             
+'''
+개선한 솔루션: 
+Runtime: 574 ms, faster than 18.67% of Python3 online submissions for Partition Array Into Three Parts With Equal Sum.
+Memory Usage: 21 MB, less than 81.32% of Python3 online submissions for Partition Array Into Three Parts With Equal Sum.
+
+많은거 바꿔줄 필요없음. 그냥 count 검사하는 if guard만 아래쪽으로 내려버리면 해결됨. 
+3으로 count 체크하는걸로 바꿀 수 있음. 
+'''
+class Solution:
+    def canThreePartsEqualSum(self, arr: List[int]) -> bool:
+        if sum(arr) % 3 != 0:
+            return False 
+        target = sum(arr)//3 
+        
+        count = 0 
+        accum = 0 
+        for num in arr:
+            accum += num
+            if accum == target:
+                count += 1
+                accum = 0
+            if count == 3:
+                return True 
+        return False 
+            
                 
         
+                
         
