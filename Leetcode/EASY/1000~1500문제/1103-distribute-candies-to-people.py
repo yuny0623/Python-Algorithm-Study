@@ -5,7 +5,6 @@ Runtime: 74 ms, faster than 25.90% of Python3 online submissions for Distribute 
 Memory Usage: 14 MB, less than 8.54% of Python3 online submissions for Distribute Candies to People.
 '''
 
-
 class Solution:
     def distributeCandies(self, candies: int, num_people: int) -> List[int]:
         p = [0] * num_people
