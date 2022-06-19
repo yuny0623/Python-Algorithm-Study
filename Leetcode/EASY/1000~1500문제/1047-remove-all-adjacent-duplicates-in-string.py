@@ -37,7 +37,7 @@ Runtime: 131 ms, faster than 41.59% of Python3 online submissions for Remove All
 Memory Usage: 14.8 MB, less than 48.07% of Python3 online submissions for Remove All Adjacent Duplicates In String.
 
 코멘트:
-스택을 활용하자. 
+스택을 활용하자. 성능개선 가능? -> 굳이 list에 넣고 빼는 과정없이도 풀 수 있지 않을까? 
 '''
 
 class Solution:
@@ -58,5 +58,21 @@ class Solution:
         return ''.join(stack)
 
 
+'''
+개선한 솔루션: 
 
-
+Runtime: 146 ms, faster than 31.89% of Python3 online submissions for Remove All Adjacent Duplicates In String.
+Memory Usage: 16 MB, less than 5.54% of Python3 online submissions for Remove All Adjacent Duplicates In String.
+'''
+class Solution:
+    def removeDuplicates(self, s: str) -> str:
+        i = 0
+        stack = [0] * len(s)
+        for j in range(len(s)):
+            char = s[j]
+            if i > 0 and stack[i-1] == char:
+                i -= 1
+            else:
+                stack[i] = char
+                i += 1
+        return ''.join(stack[0:i])
