@@ -50,7 +50,10 @@ Runtime: 46 ms, faster than 53.28% of Python3 online submissions for Valid Boome
 Memory Usage: 13.9 MB, less than 62.30% of Python3 online submissions for Valid Boomerang.
 
 기울기까지 비교해주고 있다. 위 솔루션에서는 기울기 비교해주는걸 안했다. 
-아래 예제가 배울게 많다. 특히 zip 사용법도 그렇고, 
+아래 예제가 배울게 많다. 특히 zip 사용법도 그렇고, 그리고 지금 list 를 set 으로 바꿀때는 map을 통해서 
+tuple 로 바꿔주는걸 볼 수 있을 거다. List[List[T]] 형인 자료구조는 내부에 List가 있는데 이걸 그냥
+Set으로 하려면 TypeError: unhashable list 라는 에러를 마주할거다. 그러니 tuple 로 바꿔주고 set 으로 잡는게
+맞다.  
 '''
 
 class Solution:
