@@ -76,3 +76,6 @@ class Solution:
                 stack[i] = char
                 i += 1
         return ''.join(stack[0:i])
+ 
+
+
