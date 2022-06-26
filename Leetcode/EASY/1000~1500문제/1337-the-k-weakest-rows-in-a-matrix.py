@@ -71,6 +71,9 @@ class Solution:
 := 엱산자를 통해서 할당할 수 있는 기능이 있다는 답변이 Stackoverflow 에 있었는데 나와 같은
 경우에 사용할 수 있는 연산자가 아니다. 즉 list comprehension 내에서 한번에 끝낼 수 있는 
 방법이 아니다. 
+
+근데 왜 이거 bit operation 사용하면 될 것 같지... 
+bit or 혹은 xor 어떻게 써보면 될 것 같은데, 
 '''
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
