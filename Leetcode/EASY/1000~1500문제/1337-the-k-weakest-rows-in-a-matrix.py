@@ -81,4 +81,12 @@ class Solution:
         sorted_li = sorted(li) 
         result = [li.index(val) for val, count in zip(sorted_li, list(range(k))) if count <k]
         return result 
-    
+
+'''
+walrus operator 라는 바다코끼리 keyword 를 사용하려했는데 내가 생각하는 기능이 아니다. 
+일단 해봤는데 안됌. list comprehension 의 한계임. bit operation 도 결국에는 어쨋든 결과를
+할당해야 하기 때문에 해보진 않았지만 안될것같음. 
+
+왜냐면? assign은 둘째치고 특정 list 의 값을 수정해줘야하는 로직이 필요하기 때문이다. 
+이건 어떻게 바꿀 수 없다.  
+'''
