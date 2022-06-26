@@ -62,3 +62,20 @@ class Solution:
         return result 
 
 
+'''
+개선했지만 오답인 솔루션: 
+여기까지는 어떻게 list comprehension 으로 바꿔줬는데 list comprehension에서 선언문을 
+실행안될것같은데...즉 위 코드에서 보면 -1 로 설정하는 부분이 있는데 즉 할당이 list comprehension
+에서 이뤄질 수 있는지 모르겠다. 이건 찾아보자. 
+
+:= 엱산자를 통해서 할당할 수 있는 기능이 있다는 답변이 Stackoverflow 에 있었는데 나와 같은
+경우에 사용할 수 있는 연산자가 아니다. 즉 list comprehension 내에서 한번에 끝낼 수 있는 
+방법이 아니다. 
+'''
+class Solution:
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+        li = [row.count(1) for row in mat] 
+        sorted_li = sorted(li) 
+        result = [li.index(val) for val, count in zip(sorted_li, list(range(k))) if count <k]
+        return result 
+    
