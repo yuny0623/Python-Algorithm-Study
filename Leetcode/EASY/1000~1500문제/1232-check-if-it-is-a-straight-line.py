@@ -6,6 +6,7 @@ https://www.youtube.com/watch?v=_tfiTQNZCbs
 
 '''
 오답 솔루션: 
+division by zero 문제를어떻게 해
 '''
 class Solution:
     def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
